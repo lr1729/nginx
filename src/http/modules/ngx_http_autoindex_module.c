@@ -314,10 +314,6 @@ ngx_http_autoindex_handler(ngx_http_request_t *r)
 
         len = ngx_de_namelen(&dir);
 
-        if (ngx_de_name(&dir)[0] == '.') {
-            continue;
-        }
-
         if (!dir.valid_info) {
 
             /* 1 byte for '/' and 1 byte for terminating '\0' */
