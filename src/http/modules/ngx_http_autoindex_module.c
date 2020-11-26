@@ -534,9 +534,8 @@ ngx_http_autoindex_html(ngx_http_request_t *r, ngx_array_t *entries)
 
     b->last = ngx_cpymem(b->last, "</h1>", sizeof("</h1>") - 1);
 
-    b->last = ngx_cpymem(b->last, "<hr><pre><a href=\"../\">../</a>" CRLF,
-                         sizeof("<hr><pre><a href=\"../\">../</a>" CRLF) - 1);
-
+    b->last = ngx_cpymem(b->last, "<hr><pre>" CRLF, sizeof("<hr><pre>" CRLF) - 1);
+    
     alcf = ngx_http_get_module_loc_conf(r, ngx_http_autoindex_module);
     tp = ngx_timeofday();
 
